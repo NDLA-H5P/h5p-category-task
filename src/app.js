@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import Main from "components/Main";
 import {CategoryTaskProvider} from 'context/CategoryTaskContext';
 import {breakpoints, getRatio, sanitizeParams} from "./components/utils";
+import "./components/CategoryTask.scss";
 
 // Load library
 H5P = H5P || {};
