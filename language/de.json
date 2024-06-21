@@ -108,12 +108,16 @@
           "default": "Argument löschen"
         },
         {
-          "label": "Text innerhalb des Argumentebereichs, wenn keine neuen Argumente hinzugefügt werden können",
-          "default": "Ziehe Argumente hierher"
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
         },
         {
-          "label": "Text innerhalb des Argumentebereichs, wenn neue Argumente hinzugefügt werden können",
-          "default": "Ziehe ein existierendes Argument hierher oder füge ein neues ein"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "label": "Text innerhalb des Argumentebereichs, wenn keine neuen Argumente hinzugefügt werden können",
+          "default": "Ziehe Argumente hierher"
         }
       ]
     },

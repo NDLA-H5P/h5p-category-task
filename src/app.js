@@ -1,13 +1,10 @@
-import "core-js";
-import "regenerator-runtime/runtime";
 import React from 'react';
-import ReactDOM from "react-dom";
-import Main from "components/Main";
+import { createRoot } from 'react-dom/client';
+import Main from 'components/Main';
 import {CategoryTaskProvider} from 'context/CategoryTaskContext';
-import {breakpoints, getRatio, sanitizeParams} from "./components/utils";
+import {breakpoints, getRatio, sanitizeParams} from './components/utils';
 
 // Load library
-H5P = H5P || {};
 H5P.CategoryTask = (function () {
 
   function Wrapper(params, contentId, extras = {}) {
@@ -31,41 +28,42 @@ H5P.CategoryTask = (function () {
     this.container = null;
 
     this.translations = Object.assign({}, {
-      summary: "Summary",
-      typeYourReasonsForSuchAnswers: "Type your reasons for such answers",
-      resources: "Resources",
-      save: "Save",
-      restart: "Restart",
-      createDocument: "Create document",
-      labelSummaryComment: "Summary comment",
-      labelComment: "Comment",
-      labelStatement: "Statement",
-      labelNoComment: "No comment",
-      labelResources: "Resources",
-      selectAll: "Select all",
-      export: "Export",
-      addArgument: "Add argument",
-      ifYouContinueAllYourChangesWillBeLost: "All the changes will be lost. Are you sure you wish to continue?",
-      close: "Close",
-      drag: "Drag",
-      feedback: "Feedback",
-      submitText: "Submit",
-      submitConfirmedText: "Saved!",
-      confirm: "Confirm",
-      continue: "Continue",
-      cancel: "Cancel",
-      droparea: "Droparea :num",
-      emptydroparea: "Empty droparea :index",
-      draggableItem: "Draggable item :statement",
-      dropzone: "Dropzone :index",
-      dropzoneWithValue: "Dropzone :index with value :statement",
-      noArguments: "No arguments",
-      moveTo: "Move to",
-      deleteArgument: "Delete argument",
-      actionMenuTitle: "Action menu",
-      actionMenuDescription: "Select the action you want to perform on this argument",
-      dropArgumentsHere: "Drop arguments here",
-      dropExistingOrAddNewArgument: "Drop existing or write new arguments",
+      summary: 'Summary',
+      typeYourReasonsForSuchAnswers: 'Type your reasons for such answers',
+      resources: 'Resources',
+      save: 'Save',
+      restart: 'Restart',
+      createDocument: 'Create document',
+      labelSummaryComment: 'Summary comment',
+      labelComment: 'Comment',
+      labelStatement: 'Statement',
+      labelNoComment: 'No comment',
+      labelResources: 'Resources',
+      selectAll: 'Select all',
+      export: 'Export',
+      addArgument: 'Add argument',
+      ifYouContinueAllYourChangesWillBeLost: 'All the changes will be lost. Are you sure you wish to continue?',
+      close: 'Close',
+      drag: 'Drag',
+      feedback: 'Feedback',
+      submitText: 'Submit',
+      submitConfirmedText: 'Saved!',
+      confirm: 'Confirm',
+      continue: 'Continue',
+      cancel: 'Cancel',
+      droparea: 'Droparea :num',
+      emptydroparea: 'Empty droparea :index',
+      draggableItem: 'Draggable item :statement',
+      dropzone: 'Dropzone :index',
+      dropzoneWithValue: 'Dropzone :index with value :statement',
+      noArguments: 'No arguments',
+      moveTo: 'Move to',
+      deleteArgument: 'Delete argument',
+      editArgument: 'Edit argument',
+      argument: 'Argument',
+      actionMenuTitle: 'Action menu',
+      actionMenuDescription: 'Select the action you want to perform on this argument',
+      dropArgumentsHere: 'Drop arguments here',
     }, this.params.l10n, this.params.resourceReport);
 
     const createElements = () => {
@@ -73,7 +71,8 @@ H5P.CategoryTask = (function () {
       wrapper.classList.add('h5p-category-task-wrapper');
       this.wrapper = wrapper;
 
-      ReactDOM.render(
+      const root = createRoot(wrapper);
+      root.render(
         <CategoryTaskProvider value={this}>
           <Main
             {...this.params}
@@ -81,13 +80,12 @@ H5P.CategoryTask = (function () {
             language={language}
             collectExportValues={this.collectExportValues}
           />
-        </CategoryTaskProvider>,
-        this.wrapper
+        </CategoryTaskProvider>
       );
     };
 
     this.collectExportValues = (index, callback) => {
-      if (typeof index !== "undefined") {
+      if (typeof index !== 'undefined') {
         this.collectExportValuesStack.push({key: index, callback: callback});
       }
       else {
@@ -97,9 +95,9 @@ H5P.CategoryTask = (function () {
       }
     };
 
-    this.registerReset = callback => this.resetStack.push(callback);
+    this.registerReset = (callback) => this.resetStack.push(callback);
 
-    this.attach = $container => {
+    this.attach = ($container) => {
       if (!this.wrapper) {
         createElements();
       }
@@ -115,7 +113,7 @@ H5P.CategoryTask = (function () {
     };
 
     this.reset = () => {
-      this.resetStack.forEach(callback => callback());
+      this.resetStack.forEach((callback) => callback());
     };
 
     /**
@@ -129,7 +127,7 @@ H5P.CategoryTask = (function () {
         return;
       }
       this.activeBreakpoints = [];
-      breakpoints().forEach(item => {
+      breakpoints().forEach((item) => {
         if (item.shouldAdd(ratio)) {
           wrapper.classList.add(item.className);
           this.activeBreakpoints.push(item.className);
@@ -160,7 +158,7 @@ H5P.CategoryTask = (function () {
       if (vars !== undefined && vars !== null) {
         translation = Object
           .keys(vars)
-          .map(key => translation.replace(key, vars[key]))
+          .map((key) => translation.replace(key, vars[key]))
           .toString();
       }
       return translation;

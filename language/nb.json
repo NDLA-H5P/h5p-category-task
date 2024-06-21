@@ -108,12 +108,16 @@
           "default": "Slett argument"
         },
         {
-          "label": "Tekst som vises inne i slippsonen for argumenter når det ikke er tillatt å legge til egne argumenter",
-          "default": "Slipp argumenter her"
+          "label": "Tekst som brukes for i vise 'rediger' muligheten",
+          "default": "Rediger argument"
         },
         {
-          "label": "Tekst som vises inne i slippsonen for argumenter når det er tillatt å legge til egne argumenter",
-          "default": "Slipp eksisterende eller skriv eget argument"
+          "label": "Tekst for argumentet",
+          "default": "Argument"
+        },
+        {
+          "label": "Tekst som vises inne i slippsonen for argumenter når det ikke er tillatt å legge til egne argumenter",
+          "default": "Slipp argumenter her"
         }
       ]
     },

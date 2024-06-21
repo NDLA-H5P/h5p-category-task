@@ -8,16 +8,27 @@
     },
     {
       "label": "Argumentos",
-      "field": {
-        "label": "Argumento",
-        "description": "La oración que el usuario necesita procesar"
-      }
+      "fields": [
+        {
+          "label": "Argumentos",
+          "entity": "argumento",
+          "field": {
+            "label": "Argumento"
+          }
+        }
+      ]
     },
     {
       "label": "Categorías",
-      "field": {
-        "label": "Categoría"
-      }
+      "fields": [
+        {
+          "label": "Categorías",
+          "entity": "categoría",
+          "field": {
+            "label": "Categoría"
+          }
+        }
+      ]
     },
     {
       "label": "Resumen",
@@ -28,7 +39,12 @@
     },
     {
       "label": "Recursos",
-      "description": "Enlaces opcionales a recursos."
+      "fields": [
+        {
+          "label": "Recursos",
+          "description": "Enlaces opcionales a recursos."
+        }
+      ]
     },
     {
       "description": "Estas opciones le permitirán controlar el comportamiento.",
@@ -92,12 +108,16 @@
           "default": "Eliminar argumento"
         },
         {
-          "default": "Dejar caer argumentos aquí",
-          "label": "Texto adentro de la zona de caída de los argumentos cuando está deshabilitado el añadir nuevos argumentos"
+          "label": "Etiqueta usada para mostrar la acción de editar",
+          "default": "Editar argumento"
         },
         {
-          "label": "Texto adentro de la zona de caída de los argumentos cuando está habilitado el añadir nuevos argumentos",
-          "default": "Dejar caer argumento existente o escribir uno nuevo"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "default": "Dejar caer argumentos aquí",
+          "label": "Texto adentro de la zona de caída de los argumentos cuando está deshabilitado el añadir nuevos argumentos"
         }
       ]
     },

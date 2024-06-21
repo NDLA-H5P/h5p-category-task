@@ -1,0 +1,192 @@
+{
+  "semantics": [
+    {
+      "label": "Cabeçalho"
+    },
+    {
+      "label": "Descrição da tarefa"
+    },
+    {
+      "label": "Argumentos",
+      "fields": [
+        {
+          "label": "Arguments",
+          "entity": "argument",
+          "field": {
+            "label": "Argument"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Categorias",
+      "fields": [
+        {
+          "label": "Categories",
+          "entity": "category",
+          "field": {
+            "label": "Category"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Base",
+      "default": "Base"
+    },
+    {
+      "label": "Instrução básica"
+    },
+    {
+      "label": "Recursos",
+      "fields": [
+        {
+          "label": "Resources",
+          "description": "Optional links to resources."
+        }
+      ]
+    },
+    {
+      "label": "Configurações comportamentais",
+      "description": "Estas opções permitirão controlar o comportamento.",
+      "fields": [
+        {
+          "label": "Activar Tentar Novamente?",
+          "description": "Assinale aqui se quiser que o utilizador tente novamente"
+        },
+        {
+          "label": "Seleciona aleatoriamente as afirmações",
+          "description": "Irá selecionar aleatoriamente as declarações pré-preenchidas"
+        },
+        {
+          "label": "Exiba os comentários fornecidos abaixo da afirmação",
+          "description": "Se o utilizador deu um comentário, o mesmo aparece na lista de afirmações"
+        },
+        {
+          "label": "Mostrar Resumo",
+          "description": "Deseja que o utilizador faça um resumo explicando os motivos para suas respostas"
+        }
+      ]
+    },
+    {
+      "label": "Localizar",
+      "fields": [
+        {
+          "label": "Marcador de posição para as caixas de texto",
+          "default": "Faça um breve resumo em palavras suas"
+        },
+        {
+          "label": "Marcador de posição quando não há argumento conexo",
+          "default": "Sem argumentos"
+        },
+        {
+          "label": "Notificação do botão `Recursos`",
+          "default": "Recursos"
+        },
+        {
+          "label": "Notificação do botão Reiniciar",
+          "default": "Reiniciar"
+        },
+        {
+          "label": "Notificação do botão Adicionar argumento",
+          "default": "Adicionar argumento"
+        },
+        {
+          "label": "Informe o utilizador que os dados serão eliminados se continuar",
+          "default": "Se continuar todas as suas alterações serão eliminadas"
+        },
+        {
+          "label": "Notificação do botão Continuar",
+          "default": "Continuar"
+        },
+        {
+          "label": "Texto curto em frente das opções onde pode mover os argumentos",
+          "default": "Mover para"
+        },
+        {
+          "label": "Notificação usada para mostrar a acção de eliminar",
+          "default": "Eliminar argumento"
+        },
+        {
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
+        },
+        {
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "label": "A funcionalidade de inserção de texto dentro da zona para arrastar e largar argumentos ao adicionar novos argumentos está desactivada",
+          "default": "Largue os argumentos aqui"
+        }
+      ]
+    },
+    {
+      "label": "Relatório de recursos",
+      "fields": [
+        {
+          "label": "Notificação do botão \"Criar Documento\"",
+          "default": "Criar documento"
+        },
+        {
+          "label": "Notificação do botão Exportar",
+          "default": "Exportar"
+        },
+        {
+          "label": "Notificação do botão Selecionar tudo",
+          "default": "Selecionar tudo"
+        },
+        {
+          "label": "Cabeçalho acima da tabela Recurso",
+          "default": "Recursos"
+        },
+        {
+          "label": "Cabeçalho do título na tabela de recursos",
+          "default": "Título"
+        },
+        {
+          "label": "Cabeçalho de introdução na tabela de recursos",
+          "default": "Introdução"
+        },
+        {
+          "label": "Cabeçalho de URL na tabela de recursos",
+          "default": "Url"
+        },
+        {
+          "label": "Notificação quando nenhum recurso for encontrado",
+          "default": "Sem recursos"
+        },
+        {
+          "label": "Notificação quando nenhum resumo é fornecido",
+          "default": "Sem comentários"
+        }
+      ]
+    },
+    {
+      "label": "Acessibilidade",
+      "fields": [
+        {
+          "label": "Fechar",
+          "default": "Fechar"
+        },
+        {
+          "label": "Arrastar",
+          "default": "Arrastar"
+        },
+        {
+          "label": "Notificação 'artigo arrastável' para os leitores de ecrã",
+          "description": "As variáveis disponíveis são :argumento",
+          "default": "Artigo arrastável: :argumento"
+        },
+        {
+          "label": "Título para a caixa de diálogo do menu de acções",
+          "default": "Menu de acções"
+        },
+        {
+          "label": "Descrição da caixa de diálogo do menu de acções",
+          "default": "Selecione a acção que deseja realizar neste argumento"
+        }
+      ]
+    }
+  ]
+}

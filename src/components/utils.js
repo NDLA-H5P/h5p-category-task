@@ -1,47 +1,115 @@
-import {escape, decode} from 'he';
+import { escape, decode } from 'he';
 
-export function ArgumentDataObject(initValues) {
-  this.id = null;
-  this.added = false;
-  this.argumentText = null;
-  this.editMode = false;
-  this.prefix = 'argument';
+/**
+ * @param {{
+ *   id?: number | null;
+ *   added?: boolean;
+ *   argumentText?: string | null;
+ *   editMode?: boolean;
+ *   prefix?: string
+ * }} initValues
+ * @returns {ArgumentDataObject}
+ */
+export function ArgumentDataObject({
+  id,
+  added,
+  argumentText,
+  editMode,
+  prefix,
+}) {
+  this.id = id ?? null;
+  this.added = added ?? false;
+  this.argumentText = argumentText ?? null;
+  this.editMode = editMode ?? false;
+  this.prefix = prefix ?? 'argument';
 
-  return Object.assign(this, initValues);
+  return this;
 }
 
-export function CategoryDataObject(initValues) {
-  this.id = null;
-  this.title = null;
-  this.connectedArguments = [];
-  this.isArgumentDefaultList = false;
-  this.theme = 'h5p-category-task-category-default';
-  this.useNoArgumentsPlaceholder = false;
-  this.prefix = 'category';
-  this.actionTargetContainer = false;
+/**
+ * @param {{
+ *   id: number;
+ *   title?: string | null;
+ *   connectedArguments?: Array<number>;
+ *   isArgumentDefaultList?: boolean;
+ *   theme?: string;
+ *   useNoArgumentsPlaceholder?: boolean;
+ *   prefix?: string;
+ *   actionTargetContainer?: boolean
+ * }} initValues
+ *
+ * @returns {CategoryDataObject}
+ */
+export function CategoryDataObject({
+  id,
+  title,
+  connectedArguments,
+  isArgumentDefaultList,
+  theme,
+  useNoArgumentsPlaceholder,
+  prefix,
+  actionTargetContainer,
+}) {
+  this.id = id ?? null;
+  this.title = title ?? null;
+  this.connectedArguments = connectedArguments ?? [];
+  this.isArgumentDefaultList = isArgumentDefaultList ?? false;
+  this.theme = theme ?? 'h5p-category-task-category-default';
+  this.useNoArgumentsPlaceholder = useNoArgumentsPlaceholder ?? false;
+  this.prefix = prefix ?? 'category';
+  this.actionTargetContainer = actionTargetContainer ?? false;
 
-  return Object.assign(this, initValues);
+  return this;
 }
 
-export function ActionMenuDataObject(initValues) {
-  this.id = null;
-  this.title = null;
-  this.activeCategory = null;
-  this.onSelect = null;
-  this.type = null;
-  this.label = null;
+/**
+ *
+ * @param {{
+ *   id?: number;
+ *   title?: string | null;
+ *   activeCategory?: boolean;
+ *   onSelect?: () => void;
+ *   type?: string;
+ *   label?: string}} initValues
+ * @returns
+ */
+export function ActionMenuDataObject({
+  id,
+  title,
+  activeCategory,
+  onSelect,
+  type,
+  label,
+}) {
+  this.id = id ?? null;
+  this.title = title ?? null;
+  this.activeCategory = activeCategory ?? null;
+  this.onSelect = onSelect ?? null;
+  this.type = type ?? null;
+  this.label = label ?? null;
 
-  return Object.assign(this, initValues);
+  return this;
 }
 
+/**
+ * @param {CategoryDataObject | ArgumentDataObject} element
+ * @returns {string}
+ */
 export function getDnDId(element) {
-  return [element.prefix, element.id].join("-");
+  return [element.prefix, element.id].join('-');
 }
 
+/**
+ * @param {() => void} func
+ * @param {number} wait
+ * @param {boolean} immediate
+ * @returns {() => void}
+ */
 export function debounce(func, wait, immediate) {
   let timeout;
   return function () {
-    const context = this, args = arguments;
+    const context = this,
+      args = arguments;
     const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
@@ -53,14 +121,26 @@ export function debounce(func, wait, immediate) {
   };
 }
 
+/**
+ * @param {string} html
+ * @returns {string}
+ */
 export function decodeHTML(html) {
   return html ? decode(html) : html;
 }
 
+/**
+ * @param {string} html
+ * @returns {string}
+ */
 export function escapeHTML(html) {
   return html ? escape(html) : html;
 }
 
+/**
+ * @param {string} html
+ * @returns {string}
+ */
 export function stripHTML(html) {
   const element = document.createElement('div');
   element.innerHTML = html;
@@ -68,11 +148,13 @@ export function stripHTML(html) {
 }
 
 export function sanitizeParams(params) {
-  const filterResourceList = element => Object.keys(element).length !== 0 && element.constructor === Object;
-  const handleObject = sourceObject => {
-    if ( sourceObject === undefined || sourceObject === null || !filterResourceList(sourceObject)) {
+  const filterResourceList = (element) =>
+    Object.keys(element).length !== 0 && element.constructor === Object;
+  const handleObject = (sourceObject) => {
+    if (sourceObject == null || !filterResourceList(sourceObject)) {
       return sourceObject;
     }
+
     return Object.keys(sourceObject).reduce((aggregated, current) => {
       aggregated[current] = decodeHTML(sourceObject[current]);
       return aggregated;
@@ -91,25 +173,24 @@ export function sanitizeParams(params) {
     resources,
   } = params;
 
-  if ( Array.isArray(argumentsList) ) {
-    argumentsList = argumentsList.map(argument => decodeHTML(argument));
+  if (Array.isArray(argumentsList)) {
+    argumentsList = argumentsList.map((argument) => decodeHTML(argument));
   }
 
-  if (resources.params.resourceList && resources.params.resourceList.filter(filterResourceList).length > 0) {
+  if (resources?.params.resourceList?.filter(filterResourceList).length > 0) {
     resources.params = {
       ...resources.params,
       l10n: handleObject(resources.params.l10n),
-      resourceList: resources.params.resourceList.filter(filterResourceList).map(resource => {
-        const {
-          title,
-          introduction,
-        } = resource;
-        return {
-          ...resource,
-          title: decodeHTML(title),
-          introduction: decodeHTML(introduction),
-        };
-      })
+      resourceList: resources.params.resourceList
+        .filter(filterResourceList)
+        .map((resource) => {
+          const { title, introduction } = resource;
+          return {
+            ...resource,
+            title: decodeHTML(title),
+            introduction: decodeHTML(introduction),
+          };
+        }),
     };
   }
 
@@ -129,33 +210,35 @@ export function sanitizeParams(params) {
 
 /**
  * CSS classnames and breakpoints for the content type
- *
- * @type {{largeTablet: string, large: string, mediumTablet: string}}
  */
 const CategoryTaskClassnames = {
-  'mediumTablet': 'h5p-medium-tablet-size',
-  'largeTablet': 'h5p-large-tablet-size',
-  'large': 'h5p-large-size',
+  mediumTablet: 'h5p-medium-tablet-size',
+  largeTablet: 'h5p-large-tablet-size',
+  large: 'h5p-large-size',
 };
 
 /**
  * Get list of classname and conditions for when to add the classname to the content type
  *
- * @return {[{className: string, shouldAdd: (function(*): boolean)}, {className: string, shouldAdd: (function(*): boolean|boolean)}, {className: string, shouldAdd: (function(*): boolean)}]}
+ * @return {[
+ *   {className: string, shouldAdd: ((ratio: number) => boolean)},
+ *   {className: string, shouldAdd: ((ratio: number) => boolean)},
+ *   {className: string, shouldAdd: ((ratio: number) => boolean)}
+ * ]}
  */
 export const breakpoints = () => {
   return [
     {
-      "className": CategoryTaskClassnames.mediumTablet,
-      "shouldAdd": ratio => ratio >= 22 && ratio < 40,
+      className: CategoryTaskClassnames.mediumTablet,
+      shouldAdd: (ratio) => ratio >= 22 && ratio < 40,
     },
     {
-      "className": CategoryTaskClassnames.largeTablet,
-      "shouldAdd": ratio => ratio >= 40 && ratio < 60,
+      className: CategoryTaskClassnames.largeTablet,
+      shouldAdd: (ratio) => ratio >= 40 && ratio < 60,
     },
     {
-      "className": CategoryTaskClassnames.large,
-      "shouldAdd": ratio => ratio >= 60,
+      className: CategoryTaskClassnames.large,
+      shouldAdd: (ratio) => ratio >= 60,
     },
   ];
 };
@@ -163,13 +246,36 @@ export const breakpoints = () => {
 /**
  * Get the ratio of the container
  *
- * @return {number}
+ * @param {HTMLElement} container
+ *
+ * @return {number | undefined}
  */
 export function getRatio(container) {
-  if ( !container) {
+  if (!container) {
     return;
   }
   const computedStyles = window.getComputedStyle(container);
-  return container.offsetWidth / parseFloat(computedStyles.getPropertyValue('font-size'));
+  return (
+    container.offsetWidth /
+    parseFloat(computedStyles.getPropertyValue('font-size'))
+  );
 }
 
+/**
+ * @template T
+ * @param {T} object
+ * @returns {T}
+ */
+export function clone(object) {
+  return JSON.parse(JSON.stringify(object));
+}
+
+/**
+ * Check if a number is even
+ * 
+ * @param {number} number
+ * @returns {boolean}
+ */
+export function isEven(number) {
+  return number % 2 === 0;
+}

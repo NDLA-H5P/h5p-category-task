@@ -1,13 +1,13 @@
 {
   "semantics": [
     {
-      "label": "Header"
+      "label": "Antraštė"
     },
     {
-      "label": "Task description"
+      "label": "Užduoties aprašymas"
     },
     {
-      "label": "Arguments",
+      "label": "Argumentai",
       "fields": [
         {
           "label": "Arguments",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "label": "Categories",
+      "label": "Kategorijos",
       "fields": [
         {
           "label": "Categories",
@@ -31,11 +31,11 @@
       ]
     },
     {
-      "label": "Summary",
-      "default": "Summary"
+      "label": "Santrauka",
+      "default": "Santrauka"
     },
     {
-      "label": "Summary instruction"
+      "label": "Santraukos instrukcija"
     },
     {
       "label": "Resources",
@@ -52,7 +52,7 @@
       "fields": [
         {
           "label": "Enable retry?",
-          "description": "Tick off this if you want the user to be able to retry"
+          "description": "Pažymėkite, jei norite, kad naudotojas galėtų bandyti dar kartą"
         },
         {
           "label": "Randomize the arguments",
@@ -64,7 +64,7 @@
         },
         {
           "label": "Show summary",
-          "description": "Do you want the user to provide a summary explaining the reasons for his/her answers"
+          "description": "Ar norite, kad naudotojas pateiktų santrauką, paaiškindamas savo atsakymų priežastis"
         }
       ]
     },
@@ -81,11 +81,11 @@
         },
         {
           "label": "Label for the \"Resources\"-button",
-          "default": "Resources"
+          "default": "Ištekliai"
         },
         {
-          "label": "Label for the \"Restart\"-button",
-          "default": "Restart"
+          "label": "Mygtuko „Paleisti iš naujo“ pavadinimas",
+          "default": "Perkrauti"
         },
         {
           "label": "Label for the \"Add argument\"-button",
@@ -93,7 +93,7 @@
         },
         {
           "label": "Inform the user that data will be lost if he/she continues",
-          "default": "If you continue all your changes will be lost"
+          "default": "Jei tęsite, visi pakeitimai bus prarasti"
         },
         {
           "label": "Label for the \"Continue\"-button",
@@ -149,8 +149,8 @@
           "default": "Intro"
         },
         {
-          "label": "Url header in resource table",
-          "default": "Url"
+          "default": "Url",
+          "label": "Url header in resource table"
         },
         {
           "label": "Label when no resources are found",
@@ -167,7 +167,7 @@
       "fields": [
         {
           "label": "Used instead of 'Close'-icon",
-          "default": "Close"
+          "default": "Uždaryti"
         },
         {
           "label": "Used instead of 'Drag'-icon",
@@ -179,8 +179,8 @@
           "default": "Draggable item: :argument"
         },
         {
-          "label": "Title for the actions menu dialog",
-          "default": "Actions menu"
+          "default": "Actions menu",
+          "label": "Title for the actions menu dialog"
         },
         {
           "label": "Description for the actions menu dialog",

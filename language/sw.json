@@ -1,0 +1,192 @@
+{
+  "semantics": [
+    {
+      "label": "Kichwa"
+    },
+    {
+      "label": "Maelezo ya kazi"
+    },
+    {
+      "label": "Hoja",
+      "fields": [
+        {
+          "label": "Arguments",
+          "entity": "argument",
+          "field": {
+            "label": "Argument"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Aina",
+      "fields": [
+        {
+          "label": "Categories",
+          "entity": "category",
+          "field": {
+            "label": "Category"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Msingi",
+      "default": "Msingi"
+    },
+    {
+      "label": "Maelekezo ya msingi"
+    },
+    {
+      "label": "Rasilimali",
+      "fields": [
+        {
+          "label": "Resources",
+          "description": "Optional links to resources."
+        }
+      ]
+    },
+    {
+      "label": "Mipangilio ya tabia",
+      "description": "Chaguzi hizi zitakuwezesha kudhibiti tabia hiyo.",
+      "fields": [
+        {
+          "label": "Washa jaribu tena?",
+          "description": "Weka tiki kwenye hii ikiwa unataka mtumiaji aweze kujaribu tena"
+        },
+        {
+          "label": "Badilisha kauli hizo bila mpangilio",
+          "description": "Itabadilisha kauli hizo zilizojazwa taarifa bila mpangilio"
+        },
+        {
+          "label": "Onyesha maoni yaliyotolewa chini ya kauli",
+          "description": "Ikiwa mtumiaji ametoa maoni, hii inaonyeshwa kwenye orodha ya kauli"
+        },
+        {
+          "label": "Onyesha muhtasari",
+          "description": "Unataka mtumiaji atoe muhtasari unaoeleza sababu za majibu yake"
+        }
+      ]
+    },
+    {
+      "label": "Janibisha",
+      "fields": [
+        {
+          "label": "Kishika nafasi cha visanduku vya maandishi",
+          "default": "Toa muhtasari mfupi kwa maneno yako mwenyewe"
+        },
+        {
+          "label": "Kishika nafasi wakati hakuna hoja zilizounganishwa",
+          "default": "Hakuna hoja"
+        },
+        {
+          "label": "Lebo ya kitufe cha \"Rasilimali\"",
+          "default": "Rasilimali"
+        },
+        {
+          "label": "Lebo ya kitufe cha \"Anzisha tena\"",
+          "default": "Anzisha tena"
+        },
+        {
+          "label": "Lebo ya kitufe cha \"Ongeza hoja\"",
+          "default": "Ongeza hoja"
+        },
+        {
+          "label": "Mjulishe mtumiaji kwamba data itapotea ikiwa ataendelea",
+          "default": "Ukiendelea mabadiliko yako yote yatapotea"
+        },
+        {
+          "label": "Lebo ya kitufe cha \"Endelea\"",
+          "default": "Endelea"
+        },
+        {
+          "label": "Maandishi mafupi mbele ya chaguzi ambapo unaweza kuhamisha hoja",
+          "default": "Hamisha hadi"
+        },
+        {
+          "label": "Lebo inayotumiwa kuonyesha kitendo cha kufuta",
+          "default": "Futa hoja"
+        },
+        {
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
+        },
+        {
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "label": "Maandishi ndani ya eneo la kushuka la hoja wakati wa kuongeza hoja mpya yamezimwa",
+          "default": "Acha hoja hapa"
+        }
+      ]
+    },
+    {
+      "label": "Ripoti ya rasilimali",
+      "fields": [
+        {
+          "label": "Lebo ya kitufe cha \"Unda waraka\"",
+          "default": "Unda waraka"
+        },
+        {
+          "label": "Lebo kwenye kitufe cha \"Pakua na Tuma\"",
+          "default": "Pakua na Tuma"
+        },
+        {
+          "label": "Lebo kwenye kitufe cha \"Chagua yote\"",
+          "default": "Chagua yote"
+        },
+        {
+          "label": "Kichwa juu ya jedwali la \"Rasilimali\"",
+          "default": "Rasilimali"
+        },
+        {
+          "label": "Kichwa cha mada katika jedwali la rasilimali",
+          "default": "Mada"
+        },
+        {
+          "label": "Kichwa cha utangulizi katika jedwali la rasilimali",
+          "default": "Utangulizi"
+        },
+        {
+          "label": "Kichwa cha vipataji rasilimali sawa katika jedwali la rasilimali",
+          "default": "Url"
+        },
+        {
+          "label": "Lebo wakati hakuna rasilimali zinazopatikana",
+          "default": "Hakuna rasilimali"
+        },
+        {
+          "label": "Weka lebo wakati hakuna muhtasari unaotolewa",
+          "default": "Hakuna maoni"
+        }
+      ]
+    },
+    {
+      "label": "Ufikiaji",
+      "fields": [
+        {
+          "label": "Funga",
+          "default": "Funga"
+        },
+        {
+          "label": "Buruta",
+          "default": "Buruta"
+        },
+        {
+          "label": "Lebo ya 'kitu kinachoweza kuburutwa' kwa visomaji skrini",
+          "description": "Vigezo vinavyopatikana ni: hoja",
+          "default": "Kitu kinachoweza kuburutwa:: hoja"
+        },
+        {
+          "label": "Mada ya mazungumzo ya menyu ya vitendo",
+          "default": "Menyu ya vitendo"
+        },
+        {
+          "label": "Maelezo ya mazungumzo ya menyu ya vitendo",
+          "default": "Chagua hatua unayotaka kufanya kwenye hoja hii"
+        }
+      ]
+    }
+  ]
+}

@@ -8,16 +8,27 @@
     },
     {
       "label": "Argumentos",
-      "field": {
-        "label": "Argumento",
-        "description": "La declaración que el usuario necesita procesar"
-      }
+      "fields": [
+        {
+          "label": "Argumentos",
+          "entity": "argumento",
+          "field": {
+            "label": "Argumento"
+          }
+        }
+      ]
     },
     {
       "label": "Categorías",
-      "field": {
-        "label": "Categoría"
-      }
+      "fields": [
+        {
+          "label": "Categorías",
+          "entity": "categoría",
+          "field": {
+            "label": "Categoría"
+          }
+        }
+      ]
     },
     {
       "label": "Resumen",
@@ -28,7 +39,12 @@
     },
     {
       "label": "Recursos",
-      "description": "Enlaces opcionales a recursos."
+      "fields": [
+        {
+          "label": "Recursos",
+          "description": "Enlaces opcionales a recursos."
+        }
+      ]
     },
     {
       "label": "Configuración del comportamiento",
@@ -92,12 +108,16 @@
           "default": "Eliminar argumento"
         },
         {
-          "label": "Texto dentro de la zona para soltar argumentos cuando está deshabilitada la opción de añadir nuevos argumentos",
-          "default": "Suelta tus argumentos aquí"
+          "label": "Etiqueta usada para mostrar la acción de editar",
+          "default": "Editar argumento"
         },
         {
-          "default": "Suelta un argumento existente o escribe uno nuevo",
-          "label": "Texto dentro de la zona para soltar argumentos cuando está activada la opción de añadir nuevos argumentos"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "label": "Texto dentro de la zona para soltar argumentos cuando está deshabilitada la opción de añadir nuevos argumentos",
+          "default": "Suelta tus argumentos aquí"
         }
       ]
     },

@@ -8,16 +8,27 @@
     },
     {
       "label": "Argumentuak",
-      "field": {
-        "description": "Erabiltzaileak prozesatu behar duen adierazpena",
-        "label": "Argudioa"
-      }
+      "fields": [
+        {
+          "label": "Argumentuak",
+          "entity": "argudioa",
+          "field": {
+            "label": "Argudioa"
+          }
+        }
+      ]
     },
     {
       "label": "Kategoriak",
-      "field": {
-        "label": "Kategoria"
-      }
+      "fields": [
+        {
+          "label": "Kategoriak",
+          "entity": "kategoria",
+          "field": {
+            "label": "Kategoria"
+          }
+        }
+      ]
     },
     {
       "label": "Laburpena",
@@ -28,7 +39,12 @@
     },
     {
       "label": "Baliabideak",
-      "description": "Baliabideetarako aukerazko estekak."
+      "fields": [
+        {
+          "label": "Baliabideak",
+          "description": "Baliabideetarako aukerazko estekak."
+        }
+      ]
     },
     {
       "label": "Portaeren ezarpenak",
@@ -92,12 +108,16 @@
           "label": "Ezabatu ekintza erakusteko erabilitako etiketa"
         },
         {
-          "default": "Jaregin argudioak hemen",
-          "label": "Askatze-eremuaren barruan argudio berriak gehitzea desgaituta dagoenean erakutsiko den testua"
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
         },
         {
-          "default": "Jaregin dagoen argudioa edo idatzi berri bat",
-          "label": "Askatze-eremuaren barruan argudio berriak gehitzea gaituta dagoenean erakutsiko den testua"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "default": "Jaregin argudioak hemen",
+          "label": "Askatze-eremuaren barruan argudio berriak gehitzea desgaituta dagoenean erakutsiko den testua"
         }
       ]
     },

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {useCategoryTask} from "context/CategoryTaskContext";
+import {useCategoryTask} from 'context/CategoryTaskContext';
 
 /**
  * @return {null}
@@ -27,17 +27,16 @@ function DeleteStatement(props) {
   return (
     <button
       onClick={onClick}
-      type={"button"}
-      onKeyUp={event => {
+      type={'button'}
+      onKeyUp={(event) => {
         if (event.keyCode && event.keyCode === 8) {
           onClick();
         }
       }}
-      className={"h5p-category-task-delete-button"}
+      className={'h5p-category-task-delete-button'}
     >
       <span
-        className={"h5p-ri hri-times"}
-        aria-hidden={true}
+        className={'h5p-ri hri-times'}
       />
       <span className="visible-hidden">{translate('close')}</span>
     </button>

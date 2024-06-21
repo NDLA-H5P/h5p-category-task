@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function UnEditableArgument({argument}) {
   return (
-    <p className={"h5p-category-task-element"}>
+    <p className={'h5p-category-task-element'}>
       {argument}
     </p>
   );

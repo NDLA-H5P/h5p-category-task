@@ -8,16 +8,27 @@
     },
     {
       "label": "Argumentos",
-      "field": {
-        "label": "Argumento",
-        "description": "A declaração que o usuário precisa processar"
-      }
+      "fields": [
+        {
+          "label": "Argumentos",
+          "entity": "argumento",
+          "field": {
+            "label": "Argumento"
+          }
+        }
+      ]
     },
     {
       "label": "Categorias",
-      "field": {
-        "label": "Categoria"
-      }
+      "fields": [
+        {
+          "label": "Categorias",
+          "entity": "categoria",
+          "field": {
+            "label": "Categoria"
+          }
+        }
+      ]
     },
     {
       "label": "Base",
@@ -28,7 +39,12 @@
     },
     {
       "label": "Recursos",
-      "description": "Links opcionais para recursos."
+      "fields": [
+        {
+          "label": "Recursos",
+          "description": "Links opcionais para recursos."
+        }
+      ]
     },
     {
       "label": "Configurações comportamentais",
@@ -92,12 +108,16 @@
           "default": "Excluir argumento"
         },
         {
-          "label": "O texto dentro da zona de soltura de argumentos ao adicionar novos argumentos está desativado",
-          "default": "Solte os argumentos aqui"
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
         },
         {
-          "label": "O texto dentro da zona de soltura de argumentos ao adicionar novos argumentos está ativado",
-          "default": "Elimine o existente ou escreva um novo argumento"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "label": "O texto dentro da zona de soltura de argumentos ao adicionar novos argumentos está desativado",
+          "default": "Solte os argumentos aqui"
         }
       ]
     },

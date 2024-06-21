@@ -7,28 +7,10 @@
       "label": "Task description"
     },
     {
-      "label": "Arguments",
-      "fields": [
-        {
-          "label": "Arguments",
-          "entity": "argument",
-          "field": {
-            "label": "Argument"
-          }
-        }
-      ]
+      "label": "Arguments"
     },
     {
-      "label": "Categories",
-      "fields": [
-        {
-          "label": "Categories",
-          "entity": "category",
-          "field": {
-            "label": "Category"
-          }
-        }
-      ]
+      "label": "Categories"
     },
     {
       "label": "Summary",
@@ -38,13 +20,7 @@
       "label": "Summary instruction"
     },
     {
-      "label": "Resources",
-      "fields": [
-        {
-          "label": "Resources",
-          "description": "Optional links to resources."
-        }
-      ]
+      "label": "Resources"
     },
     {
       "label": "Behavioural settings",
@@ -69,7 +45,6 @@
       ]
     },
     {
-      "label": "Localize",
       "fields": [
         {
           "label": "Placeholder for the text boxes",
@@ -96,8 +71,8 @@
           "default": "If you continue all your changes will be lost"
         },
         {
-          "label": "Label for the \"Continue\"-button",
-          "default": "Continue"
+          "default": "Continue",
+          "label": "Label for the \"Continue\"-button"
         },
         {
           "label": "Short text in front of the options to where you can move the arguments",
@@ -108,18 +83,15 @@
           "default": "Delete argument"
         },
         {
-          "label": "Label used to show the edit action",
-          "default": "Edit argument"
-        },
-        {
-          "label": "Label for the argument",
-          "default": "Argument"
-        },
-        {
           "label": "Text inside the arguments drop zone when adding new arguments are disabled",
           "default": "Drop arguments here"
+        },
+        {
+          "label": "Text inside the arguments drop zone when adding new arguments are enabled",
+          "default": "Drop existing or write new argument"
         }
-      ]
+      ],
+      "label": "Localize"
     },
     {
       "label": "Resource report",

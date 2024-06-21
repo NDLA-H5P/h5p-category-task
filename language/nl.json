@@ -8,16 +8,27 @@
     },
     {
       "label": "Argumenten",
-      "field": {
-        "label": "Argument",
-        "description": "De bewering die de gebruiker moet verwerken"
-      }
+      "fields": [
+        {
+          "label": "Argumenten",
+          "entity": "argument",
+          "field": {
+            "label": "Argument"
+          }
+        }
+      ]
     },
     {
       "label": "Categorieën",
-      "field": {
-        "label": "Categorie"
-      }
+      "fields": [
+        {
+          "label": "Categorieën",
+          "entity": "categorie",
+          "field": {
+            "label": "Categorie"
+          }
+        }
+      ]
     },
     {
       "label": "Samenvatting",
@@ -28,7 +39,12 @@
     },
     {
       "label": "Hulpmiddelen",
-      "description": "Optionele links naar hulpmiddelen."
+      "fields": [
+        {
+          "label": "Hulpmiddelen",
+          "description": "Optionele links naar hulpmiddelen."
+        }
+      ]
     },
     {
       "fields": [
@@ -92,12 +108,16 @@
           "label": "Label gebruikt voor tonen van de verwijder-actie"
         },
         {
-          "default": "Zet argumenten hier neer",
-          "label": "Tekst binnen het neerzetgebied voor argumenten wanneer nieuwe argumenten toevoegen uitgeschakeld is"
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
         },
         {
-          "label": "Tekst binnen het neerzetgebied voor argumenten wanneer nieuwe argumenten toevoegen is ingeschakeld",
-          "default": "Zet bestaande argumenten hier neer of schrijf een nieuw argument"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "default": "Zet argumenten hier neer",
+          "label": "Tekst binnen het neerzetgebied voor argumenten wanneer nieuwe argumenten toevoegen uitgeschakeld is"
         }
       ]
     },

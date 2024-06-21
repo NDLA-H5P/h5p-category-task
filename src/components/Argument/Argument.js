@@ -1,30 +1,35 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import EditableArgument from "./components/EditableArgument";
-import UnEditableArgument from "./components/UnEditableArgument";
-import ActionMenu from "./components/ActionMenu";
-import classnames from "classnames";
-import DragArrows from "./components/DragArrows";
-import {getDnDId} from "../utils";
+import EditableArgument from './components/EditableArgument';
+import UnEditableArgument from './components/UnEditableArgument';
+import ActionMenu from './components/ActionMenu';
+import classnames from 'classnames';
+import DragArrows from './components/DragArrows';
+import { getDnDId } from '../utils';
 
-function Argument(props) {
-
-  const innerRef = useRef();
+function Argument({
+  argument,
+  onArgumentChange,
+  startEditing,
+  stopEditing,
+  enableEditing = false,
+  isDragging = false,
+  isDragEnabled = true,
+  actions,
+}) {
+  const innerRef = useRef(null);
   const [refReady, setRef] = useState(false);
-
-  const {
-    argument,
-    onArgumentChange,
-    enableEditing = false,
-    isDragging = false,
-    isDragEnabled = true,
-    actions,
-  } = props;
 
   const [showPopover, togglePopover] = useState(false);
 
+  const actionMenuId = `action-menu-${argument.id}_${H5P.createUUID()}`;
+
   function toggle() {
-    togglePopover(prevState => !prevState);
+    togglePopover((prevState) => !prevState);
+  }
+
+  function closePopover() {
+    togglePopover(false);
   }
 
   useEffect(() => {
@@ -32,22 +37,20 @@ function Argument(props) {
   }, [innerRef]);
 
   let displayStatement;
-  if (enableEditing) {
+  if (enableEditing && !isDragging) {
     displayStatement = (
       <EditableArgument
         argument={argument.argumentText}
         inEditMode={argument.editMode}
-        onBlur={onArgumentChange}
+        onChange={onArgumentChange}
+        startEditing={startEditing}
+        stopEditing={stopEditing}
         idBase={argument.id}
       />
     );
   }
   else {
-    displayStatement = (
-      <UnEditableArgument
-        argument={argument.argumentText}
-      />
-    );
+    displayStatement = <UnEditableArgument argument={argument.argumentText} />;
   }
 
   let argumentLayout = (
@@ -55,17 +58,20 @@ function Argument(props) {
       activeDraggable={isDragEnabled && isDragging}
       isDragEnabled={isDragEnabled}
       statementDisplay={displayStatement}
+      showPopover={showPopover}
+      menuId={actionMenuId}
       toggle={toggle}
     />
   );
 
-  if ( Array.isArray(actions) && actions.length > 0  && refReady) {
+  if (Array.isArray(actions) && actions.length > 0 && refReady) {
     argumentLayout = (
       <ActionMenu
+        menuId={actionMenuId}
         actions={actions}
         show={showPopover}
-        handleClose={toggle}
-        innerRef={innerRef.current}
+        handleClose={closePopover}
+        parentElement={innerRef.current}
       >
         {argumentLayout}
       </ActionMenu>
@@ -73,11 +79,7 @@ function Argument(props) {
   }
 
   return (
-    <div
-      id={getDnDId(argument)}
-      aria-expanded={showPopover}
-      ref={innerRef}
-    >
+    <div id={getDnDId(argument)} ref={innerRef}>
       {argumentLayout}
     </div>
   );
@@ -86,45 +88,44 @@ function Argument(props) {
 Argument.propTypes = {
   argument: PropTypes.object,
   onArgumentChange: PropTypes.func,
+  startEditing: PropTypes.func,
+  stopEditing: PropTypes.func,
   enableEditing: PropTypes.bool,
   onArgumentDelete: PropTypes.func,
-  isDragging: PropTypes.bool,
+  isDragging: PropTypes.bool.isRequired,
   isDragEnabled: PropTypes.bool,
   actions: PropTypes.array,
 };
 
-function ArgumentLayout(props) {
-
-  const {
-    activeDraggable,
-    isDragEnabled,
-    statementDisplay,
-    toggle,
-  } = props;
-
+function ArgumentLayout({
+  activeDraggable,
+  isDragEnabled,
+  statementDisplay,
+  showPopover,
+  menuId,
+  toggle,
+}) {
   return (
-    <div
-      className={"h5p-category-task-argument-container"}
-    >
+    <div className={'h5p-category-task-argument-container'}>
       <div
-        className={classnames("h5p-category-task-argument", {
-          "h5p-category-task-active-draggable": activeDraggable
+        className={classnames('h5p-category-task-argument', {
+          'h5p-category-task-active-draggable': activeDraggable,
         })}
       >
-        <div
-          className={"h5p-category-task-argument-provided"}
-        >
+        <div className={'h5p-category-task-argument-provided'}>
           {isDragEnabled && (
             <DragArrows/>
           )}
           {statementDisplay}
           <button
-            className={"h5p-category-task-argument-actions"}
-            aria-label={"See available actions"}
+            className={'h5p-category-task-argument-actions'}
+            aria-label={'See available actions'}
+            aria-expanded={showPopover}
+            aria-controls={showPopover ? menuId : undefined}
             onClick={toggle}
-            type={"button"}
+            type={'button'}
           >
-            <span className={"fa fa-caret-down"}/>
+            <span className={'fa fa-caret-down'} />
           </button>
         </div>
       </div>
@@ -137,16 +138,13 @@ ArgumentLayout.propTypes = {
   isDragEnabled: PropTypes.bool,
   statementDisplay: PropTypes.object,
   toggle: PropTypes.func,
+  closePopover: PropTypes.func,
 };
 
 ArgumentLayout.defaultProps = {
-  toggle: () => {
-  },
+  toggle: () => {},
   isDragEnabled: true,
   activeDraggable: false,
 };
 
-export {
-  Argument as default,
-  ArgumentLayout
-};
+export { Argument as default, ArgumentLayout };

@@ -28,8 +28,8 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 .h5p-category-task-button-export,
 .h5p-category-task-reset-modal .continue {
   @extend .h5p-category-task-button;
-  background-color: #1f1f1f;
-  border: 2px solid #404040;
+  background-color: #507AA4;
+  border: 2px solid #cccccc;
 
   &:hover {
     background-color: #363636;
@@ -67,6 +67,16 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   .h5p-category-task-summary,
   .h5p-category-task-category-default {
     width: 100%;
+
+    #summary-header {
+      display: block;
+      font-size: 1.5em;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+    }
   }
 
   .h5p-category-task-pro,
@@ -93,6 +103,13 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
       display: flex;
     }
   }
+
+  .h5p-category-task-right-aligned {
+    .h5p-category-task-actionmenu {
+      left: unset !important;
+      right: 0;
+    }
+  }
 }
 
 .h5p-large-tablet-size,
@@ -109,28 +126,10 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   .h5p-category-task-argument-container > div {
     display: flex;
   }
-
-  .h5p-category-task-category-container {
-    .h5p-category-task-header-argument-add {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-
-      :not(.fa){
-        display: block;
-        text-decoration: underline;
-      }
-
-      .fa {
-        font-size: 0.8rem;
-        margin-right: 0.4rem;
-      }
-    }
-  }
 }
 
 .h5p-category-task-column{
-  padding: 0 1rem;
+  margin: 0 1rem;
 }
 
 .h5p-category-task-surface {
@@ -146,7 +145,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .h5p-category-task-header {
-  background-color: #2880d0;
+  background-color: #507AA4;
   display: flex;
   margin: 0;
   align-items: center;
@@ -185,9 +184,21 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     border-radius: $borderRadius;
   }
 
+  .h5p-category-task-draggable-element--dragging {
+    border-color: transparent;
+  }
+
   .h5p-category-task-argument-container, .h5p-category-task-argument-container:hover {
     box-shadow: none;
   }
+}
+
+.h5p-dnd-draggable {
+  position: relative;
+}
+
+.h5p-dnd-draggable--dragging {
+  z-index: 1;
 }
 
 .h5p-category-task-argument {
@@ -384,6 +395,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   position: relative;
 }
 
+
 .h5p-category-task-draggable-element > div {
   position: relative;
 }
@@ -429,6 +441,17 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   justify-content: flex-start;
   align-items: center;
   padding: 0.3em 0.6em;
+  position: relative;
+
+  .h5p-category-task-editable-button {
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    cursor: inherit;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+  }
 
   label,
   div {
@@ -444,7 +467,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .h5p-category-task-footer {
-  background-color: #1f1f1f;
+  background-color: #507AA4;
   color: white;
   padding: 1.25rem;
   display: flex;
@@ -469,10 +492,6 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   border-radius: $borderRadius;
   border: 2px solid #dbe2e8;
   padding: 1rem;
-
-  .h5p-category-task-header-argument-add {
-    display: none;
-  }
 }
 
 .h5p-category-task-category-container {
@@ -480,7 +499,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   .h5p-category-task-category-header {
     overflow: hidden;
     min-height: 2.5rem;
-    padding-left: 1.1875rem;
+    padding: 0 1.1875rem;
     display: flex;
     align-items: center;
     font-style: italic;
@@ -488,27 +507,48 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     line-height: 1.5625rem;
     text-shadow: 2px 1px 3px rgba(28,28,28,0.5);
     border-radius: $borderRadius $borderRadius 0 0;
-    background-color: #698ab3;
+    background-color: #2679C5;
     color: #ffffff;
     font-size: 1.125rem;
   }
 
-  .h5p-category-task-header-argument-add {
-    margin-left: auto;
-    margin-right: 0.5rem;
-    background: transparent;
-    border: 0;
-    color: inherit;
-    display: flex;
+  .h5p-category-task-add-button {
+    background-color: #ffffff;
+    border: 1px solid #dbe2e8;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.1875rem;
+    text-align: center;
+    width: fit-content;
+    word-break: break-word;
 
-    :not(.fa){
-      display: none;
+    .h5p-category-task-add-button-content {
+      align-items: center;
+      background-color: rgba(219,226,232,.25);
+      background-size: cover;
+      border: none;
+      border-radius: inherit;
+      color: #363636;
+      display: flex;
+      flex-wrap: nowrap;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 0.3125rem 0.625rem;
+
+      .fa {
+        color: inherit;
+        font-size: 1.25rem;
+        margin-right: 0.5675rem;
+      }
     }
 
-    .fa {
-      font-size: 1.6rem;
+    &:hover {
+      .h5p-category-task-add-button-content {
+        background-color: #ffffff;
+      }
     }
-
   }
 
   .h5p-category-task-category-content {
@@ -520,7 +560,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   }
 
   .h5p-category-task-column{
-    padding: 1rem;
+    margin: 1rem;
   }
 }
 
@@ -549,6 +589,7 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   width: 100%;
   border: 2px solid #dbe2e8;
   border-radius: $borderRadius;
+  margin-bottom: 1.5rem !important;
 }
 
 .h5p-category-task-unprocessed-argument-list {
@@ -559,7 +600,9 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
   flex: auto;
 
   label,
-  .h5p-category-task-popover-actionmenu-delete {
+  .h5p-category-task-popover-actionmenu-delete,
+  .h5p-category-task-popover-actionmenu-edit {
+    color: #1a1616;
     padding: 1rem 0.9rem;
     display: flex;
     overflow: hidden;
@@ -600,7 +643,8 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
     color: #121212;
   }
 
-  .h5p-category-task-popover-actionmenu-delete .h5p-category-task-popover-actionmenu-labeltext {
+  .h5p-category-task-popover-actionmenu-delete .h5p-category-task-popover-actionmenu-labeltext,
+  .h5p-category-task-popover-actionmenu-edit .h5p-category-task-popover-actionmenu-labeltext {
     color: #1a1616;
   }
 }
@@ -670,6 +714,26 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 }
 
 .export-preview {
+  .h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
+  .h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+
   .page-description {
     font-style: italic;
   }
@@ -779,36 +843,32 @@ article, aside, details, figcaption, figure, footer, header, main, menu, nav, se
 
 
 .h5p-category-task-category {
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
   position: relative;
 }
 
 .h5p-category-task-dropzone {
   border: 2px dashed #cfcfcf;
-  margin: 1rem;
+  border-radius: 5px;
 
   & > div {
-    box-shadow: inset 0 0 5px 1px rgba(0,0,0,0.1);
-    margin: 0.375rem;
-    background-color: #e6e6e6;
     font-size: 0.875rem;
     color: #666666;
-    font-style: italic;
     text-decoration: none solid rgb(102, 102, 102);
     line-height: 1.25rem;
     flex: auto;
-    height: 4em;
+    height: 4rem;
     align-items: center;
     justify-content: center;
     display: flex;
   }
 
-  &.h5p-category-task-active {
+  .h5p-category-task-droppable--active & {
     border-color: #1a73d9;
 
     & > div {
       background-color: #bbd1f0;
-      box-shadow: inset 0 0 5px 1px rgba(39,75,143,0.28);
+      color: #1458A7;
     }
   }
 }

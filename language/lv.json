@@ -8,16 +8,27 @@
     },
     {
       "label": "Argumenti",
-      "field": {
-        "label": "Arguments",
-        "description": "Apgalvojums, kas lietotājam jāapstrādā"
-      }
+      "fields": [
+        {
+          "label": "Argumenti",
+          "entity": "arguments",
+          "field": {
+            "label": "Arguments"
+          }
+        }
+      ]
     },
     {
       "label": "Kategorijas",
-      "field": {
-        "label": "Kategorija"
-      }
+      "fields": [
+        {
+          "label": "Kategorijas",
+          "entity": "kategorija",
+          "field": {
+            "label": "Kategorija"
+          }
+        }
+      ]
     },
     {
       "label": "Pamats",
@@ -28,7 +39,12 @@
     },
     {
       "label": "Resursi",
-      "description": "Neobligātas saites uz resursiem."
+      "fields": [
+        {
+          "label": "Resursi",
+          "description": "Neobligātas saites uz resursiem."
+        }
+      ]
     },
     {
       "label": "Uzvedības iestatījumi",
@@ -92,12 +108,16 @@
           "default": "Dzēst argumentu"
         },
         {
-          "default": "Ievietojiet argumentus šeit",
-          "label": "Teksts argumentu nomešanas zonā, kad jaunu argumentu pievienošana ir atspējota"
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
         },
         {
-          "label": "Teksts argumentu nomešanas zonā, kad jaunu argumentu pievienošana ir iespējota",
-          "default": "Ievietojiet esošo vai ierakstiet jaunu argumentu"
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "default": "Ievietojiet argumentus šeit",
+          "label": "Teksts argumentu nomešanas zonā, kad jaunu argumentu pievienošana ir atspējota"
         }
       ]
     },

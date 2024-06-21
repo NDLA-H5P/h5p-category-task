@@ -1,0 +1,192 @@
+{
+  "semantics": [
+    {
+      "label": "En-tête"
+    },
+    {
+      "label": "Description de la tâche"
+    },
+    {
+      "label": "Arguments",
+      "fields": [
+        {
+          "label": "Arguments",
+          "entity": "argument",
+          "field": {
+            "label": "Argument"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Catégories",
+      "fields": [
+        {
+          "label": "Categories",
+          "entity": "category",
+          "field": {
+            "label": "Category"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Base",
+      "default": "Base"
+    },
+    {
+      "label": "Instruction de base"
+    },
+    {
+      "label": "Ressources",
+      "fields": [
+        {
+          "label": "Resources",
+          "description": "Optional links to resources."
+        }
+      ]
+    },
+    {
+      "label": "Paramètres comportementaux",
+      "description": "Ces options vous permettront de contrôler le comportement.",
+      "fields": [
+        {
+          "label": "Activer réessayer ?",
+          "description": "Cocher cette option si vous souhaitez que l'utilisateur puisse réessayer"
+        },
+        {
+          "label": "Randomiser les déclarations",
+          "description": "Randomisera les déclaration préremplies"
+        },
+        {
+          "label": "Afficher les commentaires fournis sous la déclaration",
+          "description": "Si l'utilisateur a fourni un commentaire, celui-ci est affiché dans la liste des déclarations"
+        },
+        {
+          "label": "Afficher le résumé",
+          "description": "Souhaitez-vous que l'utilisateur fournisse un résumé expliquant les raisons de ses réponses"
+        }
+      ]
+    },
+    {
+      "label": "Localiser",
+      "fields": [
+        {
+          "label": "Espace réservé pour les zones de texte",
+          "default": "Faites un bref résumé dans vos propres mots"
+        },
+        {
+          "label": "Espace réservé quand aucun argument n'est connecté",
+          "default": "Aucun argument"
+        },
+        {
+          "label": "Vignette pour la touche « Ressources »",
+          "default": "Ressources"
+        },
+        {
+          "label": "Vignette pour la touche « Redémarrer »",
+          "default": "Redémarrer"
+        },
+        {
+          "label": "Vignette pour la touche « Ajouter un argument »",
+          "default": "Ajouter un argument"
+        },
+        {
+          "label": "Informer l'utilisateur que les données seront perdues s'il/elle continue",
+          "default": "Si vous continuez, tous vos changements seront perdus"
+        },
+        {
+          "label": "Vignette pour la touche « Continuer »",
+          "default": "Continuer"
+        },
+        {
+          "label": "Court texte devant les options où vous pouvez déplacer les arguments",
+          "default": "Déplacer vers"
+        },
+        {
+          "label": "Vignette utilisée pour indiquer l'action de supprimer",
+          "default": "Supprimer l’argument"
+        },
+        {
+          "label": "Label used to show the edit action",
+          "default": "Edit argument"
+        },
+        {
+          "label": "Label for the argument",
+          "default": "Argument"
+        },
+        {
+          "label": "Texte à l'intérieur de la zone de dépôt des arguments lorsque l'ajout de nouveaux arguments est inactivé",
+          "default": "Déposer les arguments ici"
+        }
+      ]
+    },
+    {
+      "label": "Rapport de ressource",
+      "fields": [
+        {
+          "label": "Vignette de la touche « Créer un document »",
+          "default": "Créer un document"
+        },
+        {
+          "label": "Vignette pour la touche « Exporter »",
+          "default": "Exporter"
+        },
+        {
+          "label": "Vignette pour la touche « Sélectionner tout »",
+          "default": "Sélectionner tout"
+        },
+        {
+          "label": "En-tête au-dessus du tableau « Ressource »",
+          "default": "Ressources"
+        },
+        {
+          "label": "En-tête de titre dans le tableau des ressources",
+          "default": "Titre"
+        },
+        {
+          "label": "En-tête d'introduction dans le tableau des ressources",
+          "default": "Intro"
+        },
+        {
+          "label": "En-tête d'URL dans le tableau des ressources",
+          "default": "Url"
+        },
+        {
+          "label": "Vignette lorsqu'aucune ressource n'est trouvée",
+          "default": "Aucune ressource"
+        },
+        {
+          "label": "Vignette lorsqu'aucun résumé n'est fourni",
+          "default": "Aucun commentaire"
+        }
+      ]
+    },
+    {
+      "label": "Accessibilité",
+      "fields": [
+        {
+          "label": "Fermer",
+          "default": "Fermer"
+        },
+        {
+          "label": "Glisser",
+          "default": "Glisser"
+        },
+        {
+          "label": "Vignette « élément déplaçable » pour les synthèses texte-parole",
+          "description": "Les variables disponibles sont : argument",
+          "default": "Élément déplaçable : : argument"
+        },
+        {
+          "label": "Titre de la boîte de dialogue du menu d'actions",
+          "default": "Menu d'actions"
+        },
+        {
+          "label": "Description de la boîte de dialogue du menu d'actions",
+          "default": "Sélectionnez l'action que vous voulez effectuer sur cet argument"
+        }
+      ]
+    }
+  ]
+}

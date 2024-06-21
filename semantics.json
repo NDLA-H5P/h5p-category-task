@@ -207,16 +207,22 @@
         "default": "Delete argument"
       },
       {
+        "name": "editArgument",
+        "type": "text",
+        "label": "Label used to show the edit action",
+        "default": "Edit argument"
+      },
+      {
+        "name": "argument",
+        "type": "text",
+        "label": "Label for the argument",
+        "default": "Argument"
+      },
+      {
         "name": "dropArgumentsHere",
         "type": "text",
         "label": "Text inside the arguments drop zone when adding new arguments are disabled",
         "default": "Drop arguments here"
-      },
-      {
-        "name": "dropExistingOrAddNewArgument",
-        "type": "text",
-        "label": "Text inside the arguments drop zone when adding new arguments are enabled",
-        "default": "Drop existing or write new argument"
       }
     ]
   },
